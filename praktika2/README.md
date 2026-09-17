@@ -19,4 +19,4 @@
 6.Конец
 
 ### Блок-схема
-![Блок-схема](omagad)
+![Блок-схема](https://github.com/avallora/1Kurs/blob/main/praktika2/IMG_20260917_172935_133.jpg)
