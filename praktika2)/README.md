@@ -22,4 +22,4 @@
 6.Конец
 
 ### Блок-схема
-![Блок-схема](https://github.com/avallora/1Kurs/blob/main/praktika2/diag.png)
+![Блок-схема](https://github.com/avallora/1Kurs/blob/main/praktika2)/diag.png)
