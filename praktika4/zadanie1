@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main() {
+	setlocale(LC_CTYPE, "RUS");
+
+	char c = '!';
+	int i = 2;
+	float f = 3.14f;
+	double d = 5e-12;
+
+	printf("c = %c, i = %d, f = %f, d = %e\n", c, i, f, d);
+
+	printf("Введите c, i, f, d: ");
+	scanf(" %c %d %f %lf", &c, &i, &f, &d);
+	printf("c = %c, i = %d, f = %f, d = %e\n", c, i, f, d);
+
+	int whole = (int)f;
+	printf("Целая часть: %d, дробная: %f\n", whole, f - whole);
+	printf("Код символа: %x (hex), %d (dec)\n", c, c);
+	printf("1/i = %f\n", 1.0 / i);
+
+	system("pause");
+	return 0;
+}
