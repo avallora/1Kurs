@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int a = 11, b = 3;
+	int x;
+	float y;
+	double z;
+
+	x = a / b;
+	y = a / b;
+	z = a / b;
+	printf("x = %d, y = %f, z = %lf\n", x, y, z);
+
+	printf("(float)a / b = %f\n", (float)a / b);
+	printf("(double)a / b = %lf\n", (double)a / b);
+	printf("(float)(a / b) = %f\n", (float)(a / b));
+	printf("(double)(a / b) = %lf\n", (double)(a / b));
+
+	system("pause");
+	return 0;
+}
