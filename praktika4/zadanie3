@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main() {
+	setlocale(LC_CTYPE, "RUS");
+
+	int n;
+	printf("Введите трехзначное число: ");
+	scanf("%d", &n);
+
+	int last = n % 10;
+	int mid = n / 10 % 10;
+	int first = n / 100;
+	int sum = first + mid + last;
+	int rev = last * 100 + mid * 10 + first;
+
+	printf("Последняя цифра %d, первая - %d, сумма цифр %d, наоборот %d\n", last, first, sum, rev);
+
+	system("pause");
+	return 0;
+}
