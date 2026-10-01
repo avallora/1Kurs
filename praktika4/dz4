@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_CTYPE, "RUS");
+
+    int A, B;
+    int con;
+
+    printf("Проверка\n");
+    printf("Введите значения датчиков A и B: ");
+
+    scanf("%d %d", &A, &B);
+
+    con = (A % 2 != 0 && B % 2 == 0) ||
+        (A % 2 == 0 && B % 2 != 0);
+
+    printf("Сирена включена (1 - да, 0 - нет): %d\n", con);
+    return 0;
+}
