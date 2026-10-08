@@ -5,6 +5,8 @@
 #include <locale.h>
 
 int main() {
+        setlocale(LC_CTYPE, "RUS");
+        
         char c;
         printf("Введите символ: ");
         scanf(" %c", &c);
@@ -24,5 +26,6 @@ int main() {
         default:
             printf("Это не буква и не цифра\n");
             break;
+            return 0;
         }
     }
