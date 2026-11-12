@@ -2,20 +2,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+
 #define NMAX 100
 
-int main()
-{
-    setlocale(LC_CTYPE, "RUS");
+int main(void) {
+    setlocale(LC_CTYPE, "Rus");
+
     int massiv[NMAX];
     int n;
 
-    printf("Введите количество элементов n: ");
-    scanf("%d", &n);
+    printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ n: ");
+    if (scanf("%d", &n) != 1 || n <= 0 || n > NMAX) {
+        printf("\nРќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ СЂР°Р·РјРµСЂР° РјР°СЃСЃРёРІР°.\n");
+        return 0;
+    }
 
-    printf("Введите %d целых чисел:\n", n);
-    for (int i = 0; i < n; i++)
-    {
+    printf("Р’РІРµРґРёС‚Рµ %d С†РµР»С‹С… С‡РёСЃРµР»:\n", n);
+    for (int i = 0; i < n; i++) {
         printf("a[%d] = ", i + 1);
         scanf("%d", &massiv[i]);
     }
@@ -23,41 +26,35 @@ int main()
     int first_zero = -1;
     int second_zero = -1;
 
-    for (int i = 0; i < n; i++)
-    {
-        if (massiv[i] == 0)
-        {
-            if (first_zero == -1)
+    for (int i = 0; i < n; i++) {
+        if (massiv[i] == 0) {
+            if (first_zero == -1) {
                 first_zero = i;
-            else
-            {
+            } else {
                 second_zero = i;
                 break;
             }
         }
     }
 
-    if (first_zero == -1 || second_zero == -1)
-    {
-        printf("\nВ массиве меньше двух нулей — условие задачи не выполнено.\n");
+    if (first_zero == -1 || second_zero == -1) {
+        printf("\nР’ РјР°СЃСЃРёРІРµ РјРµРЅСЊС€Рµ РґРІСѓС… РЅСѓР»РµР№ вЂ” СѓСЃР»РѕРІРёРµ Р·Р°РґР°С‡Рё РЅРµ РІС‹РїРѕР»РЅРµРЅРѕ.\n");
         return 0;
     }
 
-    if (second_zero - first_zero == 1)
-    {
-        printf("\nНули стоят рядом — между ними нет элементов.\n");
+    if (second_zero - first_zero == 1) {
+        printf("\nРќСѓР»Рё СЃС‚РѕСЏС‚ СЂСЏРґРѕРј вЂ” РјРµР¶РґСѓ РЅРёРјРё РЅРµС‚ СЌР»РµРјРµРЅС‚РѕРІ.\n");
         return 0;
     }
 
     long long proizvedenie = 1;
-    for (int i = first_zero + 1; i < second_zero; i++)
-    {
+    for (int i = first_zero + 1; i < second_zero; i++) {
         proizvedenie *= massiv[i];
     }
 
-    printf("\nПервый ноль: a[%d]\n", first_zero + 1);
-    printf("Второй ноль: a[%d]\n", second_zero + 1);
-    printf("Произведение между ними = %lld\n", proizvedenie);
+    printf("\nРџРµСЂРІС‹Р№ РЅРѕР»СЊ: a[%d]\n", first_zero + 1);
+    printf("Р’С‚РѕСЂРѕР№ РЅРѕР»СЊ: a[%d]\n", second_zero + 1);
+    printf("РџСЂРѕРёР·РІРµРґРµРЅРёРµ РјРµР¶РґСѓ РЅРёРјРё = %lld\n", proizvedenie);
 
     return 0;
 }
