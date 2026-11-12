@@ -5,7 +5,7 @@
 
 #define NMAX 100
 
-int main(void) {
+int main() {
     setlocale(LC_CTYPE, "Rus");
 
     int massiv[NMAX];
